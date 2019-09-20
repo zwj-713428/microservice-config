@@ -1,15 +1,15 @@
-﻿spring: 
-   profiles:
-     active: 
-      - dev 
+﻿spring:  
+   profiles: 
+     active:  
+      - dev  
 ---
 spring: 
         profiles: dev #开发环境
-        application:
-            name: microservice-config-tedu-dev
----
-spring:  
-   profiles: test #测试环境
         application: 
-            name: microservice-config-tedu-test
+            name:  microservice-config-tedu-dev
+---
+spring:   
+   profiles:  test #测试环境
+   application:  
+            name:  microservice-config-tedu-test
   
