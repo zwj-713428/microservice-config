@@ -29,3 +29,46 @@ eueka:
     client:  # 客户端注册进eureka服务列表内
       service-url:
         defaultZone: http://eureka7001.com:7001/eureka
+     instance: 
+         instance-id: mircoservice-dept8001
+         prefer-ip-address: true
+info:  
+  app.name: tedu-mircoservice-springcloudconfig01
+  company.name: www.tedu.com
+  build.artifactId: $project.artfactId$
+  build.version: $project.version$ 
+---
+server:  
+   port:  8002 
+spring: 
+        profiles: test
+        application: 
+            name:  mircoservice-config-dept-client    
+        datasource: 
+           type:   com.alibaba.druid.pool.DruidDataSource
+           driver-class-name:   org.git.mm.mysql.Driver
+           url:  jdbc:mysql://localhost:3306/cloudDB02
+           username: root
+           password:  root
+           dbcp2: 
+              min-idle:  5
+              initial-size: 5
+              max-total: 5
+              max-wait-minllis: 200
+mybatis: 
+    config-loation:  classpath:mybatis/mybatis.cfg.xml
+    type-aliases-package:  cn.tedu.springcloud.entity
+    mapper-locations:  
+     -classpath:  mybatis/mapper/**/*.xml
+eueka: 
+    client:  # 客户端注册进eureka服务列表内
+      service-url:
+        defaultZone: http://eureka7001.com:7001/eurek
+      instance: 
+         instance-id: mircoservice-dept8002
+         prefer-ip-address: true
+info:  
+  app.name: tedu-mircoservice-springcloudconfig02
+  company.name:  www.tedu.com
+  build.artifactId:  $project.artfactId$
+  build.version:  $project.version$
