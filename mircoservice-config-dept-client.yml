@@ -39,7 +39,7 @@ info:
   build.version: $project.version$ 
 ---
 server:  
-   port:  8002 
+   port:  8001 
 spring: 
         profiles: test
         application: 
@@ -65,7 +65,7 @@ eueka:
       service-url:
         defaultZone: http://eureka7001.com:7001/eurek
       instance: 
-         instance-id: mircoservice-dept8002
+         instance-id: mircoservice-dept8001
          prefer-ip-address: true
 info:  
   app.name: tedu-mircoservice-springcloudconfig01
