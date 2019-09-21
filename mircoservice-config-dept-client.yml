@@ -1,4 +1,4 @@
-﻿spring:  
+spring:  
   profiles:  
     active:  
       -dev  
@@ -68,7 +68,7 @@ eueka:
          instance-id: mircoservice-dept8002
          prefer-ip-address: true
 info:  
-  app.name: tedu-mircoservice-springcloudconfig02
+  app.name: tedu-mircoservice-springcloudconfig01
   company.name:  www.tedu.com
   build.artifactId:  $project.artfactId$
   build.version:  $project.version$
