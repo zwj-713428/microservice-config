@@ -1,36 +1,36 @@
 spring: 
    profiles: 
      active: 
-       -dev
+        -dev
 ---
 server:
       port:  7001
-spring:  
-     profiles:  dev
-     application: 
-        name: miroservice-config-eureka-client
-eureka: 
-  instance: 
-    hostname: eureka7001.com
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url: 
+spring:   
+     profiles:   dev
+     application:  
+        name:  miroservice-config-eureka-client
+eureka:  
+   instance:  
+    hostname:  eureka7001.com
+  client: 
+     register-with-eureka:  false
+     fetch-registry:  false
+     service-url: 
      # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      defaultZone: http://eureka7001.com:7001/eureka/
+      defaultZone:  http://eureka7001.com:7001/eureka/
 ---
 server: 
     port:  7001 #注册中心占用7001 端口，冒号后面必须要有空格
 spring: 
-     profiles:  test
+     profiles:   test
      application: 
-        name: mircoservice-config-eureka-client
+         name:  miroservice-config-eureka-client
 eureka: 
   instance: 
-    hostname: eureka7001.com
+     hostname:  eureka7001.com
   client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url: 
+    register-with-eureka:  false
+    fetch-registry:  false
+    service-url:  
      # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      defaultZone: http://eureka7001.com:7001/eureka/
+      defaultZone:  http://eureka7001.com:7001/eureka/
