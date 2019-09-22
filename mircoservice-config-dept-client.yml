@@ -3,80 +3,77 @@ spring:
     active:  
        -  dev  
 ---
-server:  
-   port:  8001 
+server:
+  port: 8001             
 
-spring: 
-        profiles:   dev 
-        application: 
-            name:  mircoservice-config-dept-client
-        datasource: 
-           type:   com.alibaba.druid.pool.DruidDataSource
-           driver-class-name:  org.git.mm.mysql.Driver
-           url:  jdbc:mysql://localhost:3306/cloudDB01
-           username:  root
-           password:  root
-           dbcp2: 
-              min-idle:   5
-              initial-size:  5
-              max-total:  5
-              max-wait-minllis:  200
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml  #mybais配置文件所在路径
+  type-aliases-package: cn.tedu.springcloud.entity  #所有entity别名类所在包
+  mapper-locations:
+  -  classpath:mybatis/mapper/**/*.xml  #所有映射文件
 
-mybatis: 
-    config-loation:   classpath:mybatis/mybatis.cfg.xml
-    type-aliases-package:  cn.tedu.springcloud.entity
-    mapper-locations:  
-     -   classpath:  mybatis/mapper/**/*.xml
+spring:
+  profiles:  dev
+  application:
+    name: microservice-config-dept-client
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource  #当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver  #mysql驱动包
+    url: jdbc:mysql://localhost:3306/clouddb01  #数据库名
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5   #数据库连接池的最小维持连接数
+      initial-size: 5 #初始化连接数
+      max-total: 5   #最大连接数
+      max-wait-millis: 200  #等待连接获取的最大超时时间
+eureka:
+  client:
+    service-url: 
+      defaultZone: http://localhost:7001/eureka/, http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id:  microservice-dept8001
+    prefer-ip-address:  true #访问路径可以显示IP地址 
 
-eueka: 
-    client:      
-       service-url:
-         defaultZone:   http://eureka7001.com:7001/eureka   #客户端注册进eureka服务列表内
-    instance: 
-         instance-id:  mircoservice-dept8001
-         prefer-ip-address: true
-
-info:  
-  app.name:   tedu-mircoservice-springcloudconfig01
-  company.name:   www.tedu.com
-  build.artifactId:   $project.artifactId$
-  build.version:   $project.version$ 
+info: 
+    app.name: tedu-microservice  
+    company.name: www.tedu.com 
+    bulid.artifactId: $project.artifactId$
+    build.version: $project.version$
 ---
-server:  
-   port:  8001 
+server:
+  port: 8001             
 
-spring: 
-        profiles:  test
-        application:  
-            name:   mircoservice-config-dept-client
-        datasource: 
-           type:   com.alibaba.druid.pool.DruidDataSource
-           driver-class-name:   org.git.mm.mysql.Driver
-           url:  jdbc:mysql://localhost:3306/cloudDB02
-           username: root
-           password:  root
-           dbcp2: 
-              min-idle:  5
-              initial-size: 5
-              max-total: 5
-              max-wait-minllis: 200
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml  #mybais配置文件所在路径
+  type-aliases-package: cn.tedu.springcloud.entity  #所有entity别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml  #所有映射文件
+spring:
+  profiles:  test
+  application:  
+    name:    microservice-config-dept-client
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource  #当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver  #mysql驱动包
+    url: jdbc:mysql://localhost:3306/clouddb01  #数据库名
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5   #数据库连接池的最小维持连接数
+      initial-size: 5 #初始化连接数
+      max-total: 5   #最大连接数
+      max-wait-millis: 200  #等待连接获取的最大超时时间
+eureka:
+  client:
+    service-url: 
+      defaultZone: http://localhost:7001/eureka/, http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id:  microservice-dept8001
+    prefer-ip-address:  true #访问路径可以显示IP地址 
 
-mybatis: 
-    config-loation:  classpath:mybatis/mybatis.cfg.xml
-    type-aliases-package:  cn.tedu.springcloud.entity
-    mapper-locations:   
-     -  classpath:  mybatis/mapper/**/*.xml
-
-eueka: 
-    client: 
-      service-url:
-        defaultZone: http://eureka7001.com:7001/eureka   #客户端注册进eureka服务列表内
-    instance: 
-         instance-id:  mircoservice-dept8001
-         prefer-ip-address:  true
-
-info:  
-  app.name: tedu-mircoservice-springcloudconfig01
-  company.name:  www.tedu.com
-  build.artifactId:  $project.artifactId$
-  build.version:  $project.version$
+info: 
+    app.name: tedu-microservice  
+    company.name: www.tedu.com 
+    bulid.artifactId: $project.artifactId$
+    build.version: $project.version$
