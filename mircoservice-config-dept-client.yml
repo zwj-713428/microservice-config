@@ -9,38 +9,38 @@ server:
 spring: 
         profiles:   dev 
         application: 
-            name:mircoservice-config-dept-client
+            name:  mircoservice-config-dept-client
         datasource: 
            type:   com.alibaba.druid.pool.DruidDataSource
            driver-class-name:   org.git.mm.mysql.Driver
-           url:  jdbc:mysql://localhost:3306/cloudDB01
-           username: root
+           url:  j dbc:mysql://localhost:3306/cloudDB01
+           username:  root
            password:  root
            dbcp2: 
-              min-idle:  5
-              initial-size: 5
-              max-total: 5
-              max-wait-minllis: 200
+              min-idle:   5
+              initial-size:  5
+              max-total:  5
+              max-wait-minllis:  200
 
 mybatis: 
-    config-loation:  classpath:mybatis/mybatis.cfg.xml
+    config-loation:   classpath:mybatis/mybatis.cfg.xml
     type-aliases-package:  cn.tedu.springcloud.entity
     mapper-locations:  
-     -  classpath:  mybatis/mapper/**/*.xml
+     -   classpath:  mybatis/mapper/**/*.xml
 
 eueka: 
     client:      
        service-url:
-         defaultZone:   http://eureka7001.com:7001/eureka   # 客户端注册进eureka服务列表内
+         defaultZone:   http://eureka7001.com:7001/eureka   #客户端注册进eureka服务列表内
     instance: 
-         instance-id: mircoservice-dept8001
-         prefer-ip-address: true
+         instance-id:  mircoservice-dept8001
+         prefer-ip-address: t rue
 
 info:  
-  app.name:  tedu-mircoservice-springcloudconfig01
-  company.name:  www.tedu.com
-  build.artifactId:  $project.artifactId$
-  build.version:  $project.version$ 
+  app.name:   tedu-mircoservice-springcloudconfig01
+  company.name:   www.tedu.com
+  build.artifactId:   $project.artifactId$
+  build.version:   $project.version$ 
 ---
 server:  
    port:  8001 
@@ -48,7 +48,7 @@ server:
 spring: 
         profiles:  test
         application:  
-            name:  mircoservice-config-dept-client
+            name:   mircoservice-config-dept-client
         datasource: 
            type:   com.alibaba.druid.pool.DruidDataSource
            driver-class-name:   org.git.mm.mysql.Driver
@@ -70,7 +70,7 @@ mybatis:
 eueka: 
     client: 
       service-url:
-        defaultZone: http://eureka7001.com:7001/eureka   # 客户端注册进eureka服务列表内
+        defaultZone: http://eureka7001.com:7001/eureka   #客户端注册进eureka服务列表内
     instance: 
          instance-id:  mircoservice-dept8001
          prefer-ip-address:  true
